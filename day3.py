@@ -1,12 +1,11 @@
-import os
+
 
 todos = []
 
 
 while True:
     user_action = input("Type 1 for add or 2 for show or 3 for exit: ")
-
-
+    user_action = user_action.strip()
 
     match user_action:
         case "1":
