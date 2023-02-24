@@ -17,6 +17,8 @@ while True:
                 print(item)
         case "3":
             break
+        case whatever :
+            print("what da fuck?????")
 
 
 print("Bye!!!!!!!")
