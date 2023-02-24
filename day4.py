@@ -25,8 +25,4 @@ while True:
             todos[number] = new_todo
         case whatever:
             print("what da fuck?????")
-
-
-
-
 print("Bye!!!!!!!")
