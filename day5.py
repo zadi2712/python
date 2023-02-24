@@ -15,7 +15,8 @@ while True:
 
             for index, item in enumerate(todos):
                 item = item.title()
-                print(index, "---------", item)
+                row = f'{index}----{item}'
+                print(row)
 
         case "3" | "exit":
             break
