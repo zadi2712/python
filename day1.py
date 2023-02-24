@@ -12,3 +12,4 @@ length = len(user_promt)
 print(length)
 
 print(type(todos))
+
