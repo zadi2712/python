@@ -4,7 +4,7 @@ todos = []
 
 
 while True:
-    user_action = input("Type 1 for add or 2 for show or 3 for exit or 4 for edit: ")
+    user_action = input("Type 1 for add or 2 for show or 3 for exit or 4 for edit or 5 for remove: ")
     user_action = user_action.strip()
 
     match user_action:
@@ -25,8 +25,13 @@ while True:
             number = number - 1
             new_todo = input("Enter the new todo: ")
             todos[number] = new_todo
+
+        case "5" | "remove":
+            number = int(input("number of the todo list to remove"))
+            todos.pop(number)
+
         case whatever:
             print("what da fuck?????")
-print("Bye!!!!!!!")
 
-print()
+
+print("Bye!!!!!!!")
