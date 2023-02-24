@@ -26,3 +26,5 @@ while True:
         case whatever:
             print("what da fuck?????")
 print("Bye!!!!!!!")
+
+print()
