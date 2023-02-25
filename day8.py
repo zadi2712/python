@@ -16,7 +16,7 @@ while True:
 
 
 #       escribo en el archivo
-            with open('files/todos.txt', 'r') as file:
+            with open('files/todos.txt', 'w') as file:
                 todos = file.writelines(todos)
 
         case "2" | "show":
@@ -44,17 +44,24 @@ while True:
 
         case "4" | "edit":
             number = int(input("Enter de Number of the todo list to edit:  "))
-
-
-            file = open('files/todos.txt', 'r')
-            todos = file.readlines()
+            number = number
+            with open('files/todos.txt', 'r') as file:
+               todos = file.readlines()
+            print('here is todos exisiting', todos)
 
             new_todo = input("Enter the edit todo: ")
-            todos[number] = new_todo
+            todos[number] = new_todo + '\n'
 
-            file = open('files/todos.txt', 'w')
-            file.writelines(todos[number])
-            file.close()
+            print('here is how it will be', todos)
+
+            with open('files/todos.txt', 'w') as file:
+                file.writelines(todos)
+
+
+
+
+
+
 
 
         case "5" | "exit":
