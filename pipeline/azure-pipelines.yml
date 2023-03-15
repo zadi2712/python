@@ -80,4 +80,4 @@ steps:
         --project $(System.TeamProject)
     env: 
       AZURE_DEVOPS_EXT_PAT: $(System.AccessToken)
-    displayName: 'Create work item on failure
+    displayName: 'Create work item on failure' 
