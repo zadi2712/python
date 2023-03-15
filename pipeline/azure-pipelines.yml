@@ -3,15 +3,31 @@
 # Add steps that analyze code, save the dist with the build record, publish to a PyPI-compatible index, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/python
 
+# any change on branch main will start build pipeline
 trigger:
 - main
+# any pull request on main will start a build pipeline
+pr:
+- main
 
+# run build pipeline on 3 OS on paralell
+strategy:
+  matrix:
+    linux:
+      imageName: "ubuntu-latest"
+    mac:
+      imageName: "macOS-latest"
+    windows:
+      imageName: "windows-latest"
+  maxParallel: 3
+
+# MS Pool agent with SDK and Tools for varios development languages
 pool:
-  vmImage: ubuntu-latest
+  vmImage: $(imageName)
 
 
 steps:
-'
+
 
 - script: |
     python -m pip install --upgrade pip
