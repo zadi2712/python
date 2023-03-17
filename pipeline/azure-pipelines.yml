@@ -81,3 +81,27 @@ steps:
     env: 
       AZURE_DEVOPS_EXT_PAT: $(System.AccessToken)
     displayName: 'Create work item on failure' 
+
+
+
+- task: TerraformInstaller@1
+  inputs:
+    terraformVersion: 'latest'
+
+- task: TerraformTaskV4@4
+  inputs:
+    provider: 'azurerm'
+    command: 'init'
+    backendAWSBucketName: 
+
+    backendAWSKey: 
+    backendAzureRmContainerName: 
+    backendAzureRmKey: 
+    backendAzureRmResourceGroupName: 
+
+- task: TerraformTaskV4@4
+  inputs:
+    provider: 'azurerm'
+    command: 'apply'
+    backendAWSBucketName: 
+    
